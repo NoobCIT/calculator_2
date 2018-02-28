@@ -1,6 +1,6 @@
 const buttons = document.forms["calculator"].getElementsByTagName("input");
 const screen = document.getElementById("screen");
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-1", "-2", "-3", "-4", "-5", "-6", "-7", "-8", "-9"];
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-1", "-2", "-3", "-4", "-5", "-6", "-7", "-8", "-9", "."];
 const operations = ["+", "-", "x", "/"];
 
 let display = "";
@@ -34,6 +34,7 @@ function isValid() {
   } else {
       display = display.split("");
   }
+  console.log(display);
   while (display.length > 0) {
     if (numbers.includes(display[0])) {
       numContainer.push(display.shift());
@@ -47,8 +48,8 @@ function isValid() {
   var first;
   var second;
   while (ops.length > 0) {
-    first = parseInt(answer.shift().join(""));
-    second = parseInt(answer.shift().join(""));
+    first = parseFloat(answer.shift().join(""));
+    second = parseFloat(answer.shift().join(""));
     operation = ops.shift();
     switch (operation) {
       case "x":
