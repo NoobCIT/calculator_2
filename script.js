@@ -34,6 +34,7 @@ function isValid() {
   } else {
       display = display.split("");
   }
+  console.log(display);
   while (display.length > 0) {
     if (numbers.includes(display[0])) {
       numContainer.push(display.shift());
@@ -92,7 +93,7 @@ function allowOps(input) {
 }
 
 function checkLength() {
-  if (display.length == 16) {
+  if (display.length == 50) {
     maxLength = true;
     return;
   }
